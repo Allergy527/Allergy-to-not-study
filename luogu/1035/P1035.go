@@ -14,5 +14,5 @@ func main() {
 		}
 		Sn += 1.0 / tmp
 	}
-	fmt.Printf("%.0f", tmp)
+	fmt.Printf("%.0f\n", tmp)
 }
