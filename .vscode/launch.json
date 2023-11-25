@@ -11,7 +11,8 @@
             "program": "${workspaceFolder}/target/debug/${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console": "externalTerminal"
+            "console": "externalTerminal",
+            "preLaunchTask": "rust: cargo build"
         }
     ]
 }
