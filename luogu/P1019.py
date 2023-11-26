@@ -32,3 +32,4 @@ for i in range(len(ans)):
         real[i]+=1
         dfs(0,len(ans),ans[i])
         real[i]-=1
+print(Maxlen[0])
