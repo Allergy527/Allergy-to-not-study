@@ -1,5 +1,9 @@
 {
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "files.associations": {
+        "*.c": "c",
+        "iostream": "cpp"
+    }
 }
