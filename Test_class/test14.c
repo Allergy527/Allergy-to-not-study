@@ -1,19 +1,17 @@
 #include<stdio.h>
 
-int main(){
+int main() {
     int n;
     printf("请输入行数k:");
-    scanf("%d",&n);//读取n行输入
-    /*
-    while(n%2==0){
+    scanf("%d", &n);//读取n行输入
+    while(n % 2 == 0) {
         printf("行数应为奇数，请重新输入：");
-        scanf("%d",&n);
+        scanf("%d", &n);
     }
-    */
-    for(int i=0;i<n;++i){
-        int k=((i-n/2)>=0)? i-n/2:(n-1)/2-i;//保证k为正值实现先减后增
-        for(int j=0;j<k;++j)printf(" ");//打印空格,执行k次
-        for(int j=0;j<(n-2*k);++j)printf(j%2!=(n%2==0?3:1)?"*":" ");//打印字符,按要求用*填充
+    for(int i = 0;i < n;++i) {
+        int k = ((i - n / 2) >= 0) ? i - n / 2 : (n - 1) / 2 - i;//保证k为正值实现先减后增
+        for(int j = 0;j < k;++j)printf(" ");//打印空格,执行k次
+        for(int j = 0;j < (n - 2 * k);++j)printf(j % 2 != (n % 2 == 0 ? 3 : 1) ? "*" : " ");//打印字符,按要求用*填充
         printf("\n");//换行
     }
     getchar();getchar();//让界面停留方便维护,用DevC++的话可以不管这行
