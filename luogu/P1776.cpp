@@ -9,7 +9,7 @@
 using namespace std;
 
 void solve() {
-    int n, v, i, j, num, cnt = 1, a, b;
+    int n, v, i, j, num, cnt = 0, a, b;
     cin >> n >> v;
     vector<int>qwq(1000005, 0);
     vector<int>qwqV(1000005, 0);
@@ -27,7 +27,7 @@ void solve() {
     //动态规划
     for(i = 1;i <= cnt;++i)
         for(j = v;j >= qwqW[i];--j) //保证了一定不越界
-            qwq[j] = max(qwq[j], qwq[j - qwqW[i]] + qwqV[i]); //要么取，要么不取，不考虑空间用完
+             qwq[j] = max(qwq[j], qwq[j - qwqW[i]] + qwqV[i]); //要么取，要么不取，不考虑空间用完
     cout << qwq[v] << '\n';
 }
 
