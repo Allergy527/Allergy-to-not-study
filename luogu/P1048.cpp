@@ -11,19 +11,16 @@ using namespace std;
 void solve() {
     int n, v, i, j;
     cin >> v >> n;
-    vector<vector<int>>qwq(n + 1, vector<int>(v + 1));
-    vector<int>qwqV(n+1,0);
-    vector<int>qwqW(n+1,0);
+    vector<int>qwq(v + 1, 0);
+    vector<int>qwqV(n + 1, 0);
+    vector<int>qwqW(n + 1, 0);
     //输入物品及价值
     for(i = 1;i <= n;++i)cin >> qwqW[i] >> qwqV[i];
     //动态规划
-    for(i = 1;i <= n;++i) {
-        for(j = 1;j <= v;++j) {
-            if(qwqW[i] > j)qwq[i][j] = qwq[i - 1][j];
-            else qwq[i][j] = max(qwq[i - 1][j], qwq[i - 1][j - qwqW[i]] + qwqV[i]);
-        }
-    }
-    cout << qwq[n][v] << '\n';
+    for(i = 1;i <= n;++i)
+        for(j = v;j >=qwqW[i];--j)
+            qwq[j] = max(qwq[j], qwq[j - qwqW[i]] + qwqV[i]);
+    cout << qwq[v] << '\n';
 }
 
 int main() {
@@ -31,6 +28,6 @@ int main() {
     int t = 1;
     //cin >> t;
     while(t--)solve();
-    cin>>t;
+    cin >> t;
     return 0;
 }
