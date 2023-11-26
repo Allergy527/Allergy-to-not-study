@@ -9,9 +9,17 @@
 using namespace std;
 
 void solve() {
-    int n, m, i, j;
+    ll n;
     cin >> n;
-    
+    ll a = (ll) sqrt(n) + 1, b = 0;
+    ll ans = abs(n - a * a - b * b);
+    for(ll i = 0;i < (ll) sqrt(n);++i) {
+        a -= a > 1 ? 1 : 0;
+        b = (ll) sqrt(n - a * a);
+        if(abs(n - a * a - b * b) < ans)ans = abs(n - a * a - b * b);
+        if(abs(n - a * a - (b + 1) * (b + 1)) < ans)ans = abs(n - a * a - (b + 1) * (b + 1));
+    }
+    cout << ans;
 }
 
 int main() {
