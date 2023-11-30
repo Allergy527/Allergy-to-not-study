@@ -1,4 +1,3 @@
-#[macro_use]
 macro_rules! scanf {
     ($($x:ident),*) => {
         $(
@@ -16,8 +15,8 @@ fn main() {
     let a: i32 = nums.next().unwrap().parse().unwrap();
     let b: i32 = nums.next().unwrap().parse().unwrap();
     println!("{}", a + b);
-    let a_1 = String::new();
-    let a_2 = String::new();
+    let _a_1 = String::new();
+    let _a_2 = String::new();
     scanf!(a_1, a_2);
     println!("{a_1},{a_2}");
 }
