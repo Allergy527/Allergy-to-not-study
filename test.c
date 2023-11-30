@@ -1,9 +1,8 @@
 #include<stdio.h>
+
 int main() {
-    int x;
-    char res[10];
-    scanf("%d%d", &x);
-    gets(res);
+    char *s;s = "ABCDE";
+    printf("%s", s);
     getchar();getchar();
     return 0;
 }
