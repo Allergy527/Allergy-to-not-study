@@ -9,24 +9,27 @@
 using namespace std;
 
 void solve() {
-    int n, m, i, j,l,c,d,max=0;
+    int n, m, i, j, l, c, d, Max = 0;
     cin >> n >> m >> l;
     vector<int>qwq(n);
     vector<int>qaq(m);
-    vector<vector<int>>qvq(n, vector<int>(m));
     for(auto &x : qwq)cin >> x;
     for(auto &x : qaq)cin >> x;
-    for(i = 0;i < n;++i)
-        for(j = 0;j < m;++j)
-            qvq[i][j] = qwq[i] + qaq[j];
-    for(i = 0;i < l;++i) {
+    map<vector<int>, int>qvq;
+    while(l--) {
         cin >> c >> d;
-        qvq[c-1][d-1] = 0;
+        qvq.insert(pair<vector<int>, int>({ qwq[c - 1], qaq[d - 1] }, 1)); //装个表
     }
-    for(i = 0;i < n;++i)
-        for(j = 0;j < m;++j)
-            if(qvq[i][j] > max)max = qvq[i][j];
-    cout << max;
+    sort(qaq.begin(), qaq.end());
+    for(i = 0;i < n;++i) {
+        for(j = m - 1;j >= 0;--j) {
+            if(!qvq.contains({ qwq[i], qaq[j] })) {
+                Max = max(qwq[i] + qaq[j], Max);
+                break;
+            }
+        }
+    }
+    cout << Max;
 }
 
 int main() {
@@ -34,6 +37,6 @@ int main() {
     int t = 1;
     //cin >> t;
     while(t--)solve();
-    cin>>t;
+    cin >> t;
     return 0;
 }

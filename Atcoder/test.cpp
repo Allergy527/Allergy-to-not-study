@@ -11,7 +11,11 @@ using namespace std;
 void solve() {
     int n, m, i, j;
     cin >> n;
-    cout<<;
+    map<vector<int>, int>qvq;
+
+    qvq.insert(pair<vector<int>, int>({ 1, 2 }, 1));
+    if(!qvq.contains({ 1, 2 }))cout << 'Q';
+    else cout << 'W';
 }
 
 int main() {
