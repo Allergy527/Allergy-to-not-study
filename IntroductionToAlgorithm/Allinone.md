@@ -34,7 +34,7 @@ int Bisect_right(vector<int> list, int num) {//右偏的二分
         if(list[mid] >= num)high = mid - 1;
         else low = mid;
     }
-    return low;
+    return high;
 }
 ```
 
