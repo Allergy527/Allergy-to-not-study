@@ -9,13 +9,17 @@
 using namespace std;
 
 void solve() {
-    int n,y, m,d,D,M, j;
+    ll n, y, m, d, D, M, j;
     cin >> M >> D;
     cin >> y >> m >> d;
-    j = (d + 1) / d;
-    d = (d + 1) % D;
-    m = (m + j) % D;
-
+    if(++d > D) {
+        d = 1;
+        if(++m > M) {
+            m = 1;
+            ++y;
+        }
+    }
+    cout << y << ' ' << m << ' ' << d;
 }
 
 int main() {
@@ -23,6 +27,6 @@ int main() {
     int t = 1;
     //cin >> t;
     while(t--)solve();
-    cin>>t;
+    cin >> t;
     return 0;
 }

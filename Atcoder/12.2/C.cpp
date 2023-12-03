@@ -8,15 +8,6 @@
 
 using namespace std;
 
-ll Bisect_right(vector<ll> list, ll num) {//右偏的二分
-    ll low = 0, high = list.size() - 1;
-    while(low < high) {
-        ll mid = (low + high+1)>> 1;
-        if(list[mid] >= num)high = mid - 1;
-        else low = mid;
-    }
-    return low;
-}
 void solve() {
     ll n, m, i, j,Len=0;
     cin >> n;
