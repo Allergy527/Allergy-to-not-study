@@ -1,32 +1,17 @@
-macro_rules! scanf {
-    ($($x:ident),*) => {
-        $(
-            let mut $x =String::new();
-            std::io::stdin().read_line(&mut $x).unwrap();
-        )*
-    };
-}
-
-use std::io::stdin;
+//@author    Allergy
+//@email     Allergy527@gmail.com
+//@workspace src\bin\test.rs
+//@data      2023/12/02 16:59:49
+//
 fn main() {
-    let mut input = String::new();
-    stdin().read_line(&mut input).unwrap();
-    let mut nums = input.trim().split(' ');
-    let a: i32 = nums.next().unwrap().parse().unwrap();
-    let b: i32 = nums.next().unwrap().parse().unwrap();
-    println!("{}", a + b);
-    let _a_1 = String::new();
-    let _a_2 = String::new();
-    scanf!(a_1, a_2);
-    println!("{a_1},{a_2}");
+    let t = 1;
+    //let mut input = String::new();std::io::stdin().read_line(&mut input).unwrap();let mut t:i32=input.parse().unwrap();
+    for _ in 0..t {
+        solve()
+    }
 }
-// fn scanf<T, U>(a: T, b: U) -> (T, U) {
-//     let mut input = String::new();
-//     std::io::stdin().read_line(&mut input).unwrap();
-//     let mut input = input.trim().split_whitespace();
-//     let (x, y): (T, U) = (
-//         input.next().unwrap().parse().unwrap(),
-//         input.next().unwrap().parse().unwrap(),
-//     );
-//     (x, y)
-// }
+fn solve() {
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    println!("  *\n ***\n*****\n ***\n  *\n");
+}
