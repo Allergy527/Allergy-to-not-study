@@ -15,7 +15,7 @@ void solve() {
     vector<int>qaq(m);
     for(auto &x : qwq)cin >> x;
     for(auto &x : qaq)cin >> x;
-    map<vector<int>, int>qvq;
+    map<vector<int>, int>qvq; //记录不合理的搭配
     while(l--) {
         cin >> c >> d;
         qvq.insert(pair<vector<int>, int>({ qwq[c - 1], qaq[d - 1] }, 1)); //装个表
@@ -25,7 +25,7 @@ void solve() {
         for(j = m - 1;j >= 0;--j) {
             if(!qvq.contains({ qwq[i], qaq[j] })) {
                 Max = max(qwq[i] + qaq[j], Max);
-                break;
+                break; //后面的配菜都会更便宜，没必要找了
             }
         }
     }

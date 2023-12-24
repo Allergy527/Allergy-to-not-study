@@ -9,25 +9,24 @@
 using namespace std;
 
 void solve() {
-    ll n, m, i, j, Len = 0;
+    ll n, i;
     cin >> n;
     vector<ll>qwq(n);
     for(auto &x : qwq)cin >> x;
-    vector<ll>qvq(qwq);
-    map<int, int>ck;
-    sort(qvq.begin(), qvq.end());
-    ck[qvq[0] + 1] = 0;
+    vector<ll>qvq(qwq); //因为最后按原数组序输出，所以复制一个
+    unordered_map<int, int>ck; //哈希表检索位置
+    sort(qvq.begin(), qvq.end()); //排序确定比这个数大的和是多少
+    ck[qvq[0] + 1] = 0; //让第一个的位置定为0
     for(i = 1;i < n;++i) {
-        if(qvq[i] + 1 != qvq[i - 1] + 1) {
+        if(qvq[i] + 1 != qvq[i - 1] + 1) { //如果不相同，则创建一个新的键(key)
             ck[qvq[i] + 1] = ck[qvq[i - 1] + 1];
         }
-        ++ck[qvq[i] + 1];
+        ++ck[qvq[i] + 1]; //相同则把位置向后移
     }
-    vector<ll>qaq(n);
+    vector<ll>qaq(n); //创建一个前缀和数组
     qaq[0] = qvq[0];
-    for(i = 1;i < n;++i)qaq[i] = qvq[i] + qaq[i - 1];
-    for(auto x : qwq)cout << qaq[n - 1] - qaq[ck[x + 1]] << ' ';
-
+    for(i = 1;i < n;++i)qaq[i] = qvq[i] + qaq[i - 1]; //初始化前缀和数组
+    for(auto x : qwq)cout << qaq[n - 1] - qaq[ck[x + 1]] << ' '; //按位置输出即可
 }
 
 int main() {

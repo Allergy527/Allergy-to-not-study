@@ -9,9 +9,9 @@
 using namespace std;
 
 void solve() {
-    ll n, m, i, j, s, l;
+    int n, m, i, j, s, l;
     cin >> n >> s >> m >> l;
-    ll sum = n * (s + m + l);
+    int sum = n * (s + m + l);
     for(int S = 0;S < n / 6 + 2;++S)
         for(int M = 0;M < n / 8 + 2;++M)
             for(int L = 0;L < n / 12 + 2;++L)

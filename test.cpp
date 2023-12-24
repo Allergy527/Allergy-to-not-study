@@ -12,6 +12,11 @@ void solve() {
     int n, m, i, j;
     cin >> n;
     vector<int>qwq;
+    map<int> qaq;
+
+
+
+
     //下面是分组循环
     i = 0;
     int mx = 0;
